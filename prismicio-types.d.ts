@@ -161,22 +161,6 @@ export interface HeroSliceDefaultPrimary {
   Body: prismic.RichTextField;
 
   /**
-   * Button field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.button
-   * - **Documentation**: https://prismic.io/docs/fields/link
-   */
-  button: prismic.LinkField<
-    string,
-    string,
-    unknown,
-    prismic.FieldState,
-    "Primary" | "Secondary"
-  >;
-
-  /**
    * Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
@@ -185,6 +169,24 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Button field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button: prismic.Repeatable<
+    prismic.LinkField<
+      string,
+      string,
+      unknown,
+      prismic.FieldState,
+      "Primary" | "Secondary"
+    >
+  >;
 }
 
 /**
